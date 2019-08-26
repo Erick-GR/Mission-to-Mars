@@ -11,9 +11,9 @@
   <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 </head>
 
-  <body>
-    <div class="jumbotron">
-      <h1 class="display-4" style="text-align: center"><b>Mission to Mars</b></h1>
+  <body class="parallax">
+    <div class="jumbotron" style="background-image: url('https://toronto.citynews.ca/wp-content/blogs.dir/sites/10/2018/11/25/20154632.jpg');  background-size: cover;">
+      <h1 class="display-4" style="text-align: center; color:white"><b>Mission to Mars</b></h1>
       <!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
       <hr class="my-4">
       <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
@@ -21,6 +21,25 @@
         <a class="btn btn-primary btn-lg" href="/scrape" role="button">Ready for launch</a>
       </p>
     </div>
+
+    <style>
+    td {
+      color: white;
+    }
+    .parallax {
+      /* The image used */
+      background-image: url("https://s.yimg.com/ny/api/res/1.2/vVc_ZAQi_boYGA9ZVq2aoQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD02OTguNjI1/https://s.yimg.com/uu/api/res/1.2/XM90FtDSWouBgsXVMCRLxQ--~B/aD0zMjQwO3c9NTc2MDtzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-images/2019-04/3cd06420-5cef-11e9-a9e7-16b919a751fc");
+
+      /* Set a specific height */
+      height: 100%;
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
 
     <!-- HTML presentation -->
     <div class="container">
@@ -31,65 +50,71 @@
       </div> -->
       <div class="row">
         <div class="col-md-8">
-          <div class="card">
+          <div class="card-transparent">
             <h1 class="col-md-12">Featured Mars Image</h1>
             <hr>
-            <p class="col-md-12">{{ mars['JPL Mars Space Images']['img_description'] }}</p>
+            <p class="col-md-12" style="color:white">{{ mars['JPL Mars Space Images']['img_description'] }}</p>
             <img class="col-md-12" src="{{ mars['JPL Mars Space Images']['img_url'] }}">
           </div>
         </div>
 
         <div class="col-md-4">
-          <div class="card">
-            <h3>Current Weather on Mars</h3>
-            <p>{{ mars['Mars Weather']['weather'] }}</p>
+          <div style="padding: 0px 0px 10px 0px">
+            <div class="card-transparent" style="padding: 10px">
+              <h3>Current Weather on Mars</h3>
+              <p style="text-align: justify; color:	white">{{ mars['Mars Weather']['weather'] }}</p>
+            </div>
           </div>
-          <div class="card">
-            <h3>Mars Facts</h3>
-            <!-- <p>{{ mars['Mars Weather']['weather'] }}</p> -->
-            <table border="0" class="table table-striped">
-              <tbody>
-                <tr>
-                  <th>Equatorial Diameter:</th>
-                  <td>6,792 km</td>
-                </tr>
-                <tr>
-                  <th>Polar Diameter:</th>
-                  <td>6,752 km</td>
-                </tr>
-                <tr>
-                  <th>Mass:</th>
-                  <td>6.39 × 10^23 kg (0.11 Earths)</td>
-                </tr>
-                <tr>
-                  <th>Moons:</th>
-                  <td>2 (Phobos &amp; Deimos)</td>
-                </tr>
-                <tr>
-                  <th>Orbit Distance:</th>
-                  <td>227,943,824 km (1.38 AU)</td>
-                </tr>
-                <tr>
-                  <th>Orbit Period:</th>
-                  <td>687 days (1.9 years)</td>
-                </tr>
-                <tr>
-                  <th>Surface Temperature:</th>
-                  <td>-87 to -5 °C</td>
-                </tr>
-                <tr>
-                  <th>First Record:</th>
-                  <td>2nd millennium BC</td>
-                </tr>
-                <tr>
-                  <th>Recorded By:</th>
-                  <td>Egyptian astronomers</td>
-                </tr>
-              </tbody>
-            </table>
+
+          <div style="padding: 0px 0px 10px 0px">
+            <div class="card-transparent">
+              <h3 style="padding: 10px">Mars Facts</h3>
+              <!-- <p>{{ mars['Mars Weather']['weather'] }}</p> -->
+              <table border="0" class="table table-striped">
+                <tbody>
+                  <tr>
+                    <th>Equatorial Diameter:</th>
+                    <td>6,792 km</td>
+                  </tr>
+                  <tr>
+                    <th>Polar Diameter:</th>
+                    <td>6,752 km</td>
+                  </tr>
+                  <tr>
+                    <th>Mass:</th>
+                    <td>6.39 × 10^23 kg (0.11 Earths)</td>
+                  </tr>
+                  <tr>
+                    <th>Moons:</th>
+                    <td>2 (Phobos &amp; Deimos)</td>
+                  </tr>
+                  <tr>
+                    <th>Orbit Distance:</th>
+                    <td>227,943,824 km (1.38 AU)</td>
+                  </tr>
+                  <tr>
+                    <th>Orbit Period:</th>
+                    <td>687 days (1.9 years)</td>
+                  </tr>
+                  <tr>
+                    <th>Surface Temperature:</th>
+                    <td>-87 to -5 °C</td>
+                  </tr>
+                  <tr>
+                    <th>First Record:</th>
+                    <td>2nd millennium BC</td>
+                  </tr>
+                  <tr>
+                    <th>Recorded By:</th>
+                    <td>Egyptian astronomers</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <div class="card">
-            <h3>Mars-Earth Comparison</h3>
+
+          <div class="card-transparent">
+            <h3 style="padding: 10px">Mars-Earth Comparison</h3>
 
             <table border="0" class="table table-striped">
               <thead>
@@ -137,20 +162,29 @@
       </div>
 
       <div class="row">
+        <div class="col-md-12">
+          <h1>Latest Mars News</h1>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
         <ul class="col-md-12" style="list-style: none">
           {% for x in range(mars['NASA Mars News']['title']|length) %}
-          <div class="card">
-            <div class="row">
-              <div class="col-md-3">
-                <img class="col-md-12" src="{{ mars['NASA Mars News']['url_img'][x] }}">
+          <div style="padding: 0px 0px 10px 0px">
+            <div class="card-transparent">
+              <div class="row">
+                <div class="col-md-3">
+                  <img class="col-md-12" src="{{ mars['NASA Mars News']['url_img'][x] }}">
+                </div>
+                <div class="col-md-9">
+                  <a href="{{ mars['NASA Mars News']['url_news'][x] }}" target="_blank" style="color:	#303030"><h2>{{ mars['NASA Mars News']['title'][x] }}</h2></a>
+                  <p style='color:white'>{{ mars['NASA Mars News']['description'][x] }}</p>
+                </div>
               </div>
-              <div class="col-md-9">
-                <a href="{{ mars['NASA Mars News']['url_news'][x] }}" target="_blank"><h2>{{ mars['NASA Mars News']['title'][x] }}</h2></a>
-                <p>{{ mars['NASA Mars News']['description'][x] }}</p>
-              </div>
-            </div>
 
+            </div>
           </div>
+
           {% endfor %}
         </ul>
 
@@ -163,34 +197,34 @@
           <hr>
         </div>
 
-        <div class="col-md-6">
-          <div class="card">
+        <div class="col-md-6" style="padding: 0px 10px 10px 0px">
+          <div class="card-transparent">
             <img class="col-md-12" src="{{ mars['Mars Hemispheres'][0]['img_url'] }}">
             <hr>
-            <h3 style="text-align: center">{{ mars['Mars Hemispheres'][0]['title'] }}</h3>
+            <h3 style="text-align: center; color:white">{{ mars['Mars Hemispheres'][0]['title'] }}</h3>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="card">
+        <div class="col-md-6" style="padding: 0px 0px 10px 10px">
+          <div class="card-transparent">
             <img class="col-md-12" src="{{ mars['Mars Hemispheres'][1]['img_url'] }}">
             <hr>
-            <h3 style="text-align: center">{{ mars['Mars Hemispheres'][1]['title'] }}</h3>
+            <h3 style="text-align: center; color:white">{{ mars['Mars Hemispheres'][1]['title'] }}</h3>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6">
-          <div class="card">
+        <div class="col-md-6" style="padding: 0px 10px 10px 0px">
+          <div class="card-transparent">
             <img class="col-md-12" src="{{ mars['Mars Hemispheres'][2]['img_url'] }}">
             <hr>
-            <h3 style="text-align: center">{{ mars['Mars Hemispheres'][2]['title'] }}</h3>
+            <h3 style="text-align: center; color:white">{{ mars['Mars Hemispheres'][2]['title'] }}</h3>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="card">
+        <div class="col-md-6" style="padding: 0px 0px 10px 10px">
+          <div class="card-transparent">
             <img class="col-md-12" src="{{ mars['Mars Hemispheres'][3]['img_url'] }}">
             <hr>
-            <h3 style="text-align: center">{{ mars['Mars Hemispheres'][3]['title'] }}</h3>
+            <h3 style="text-align: center; color:white">{{ mars['Mars Hemispheres'][3]['title'] }}</h3>
           </div>
         </div>
       </div>
